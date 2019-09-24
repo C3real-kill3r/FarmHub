@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
         String farmingType = radioButton.getText().toString();
 
         if (farmingType.equalsIgnoreCase("Maize Farming")) {
-            expertPhoneNumber = "0721336787";
+            expertPhoneNumber = "0703129077";
         } else {
             expertPhoneNumber = "0710160339";
         }
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(expertPhoneNumber, null, name + "," + phoneNo + " from " + location + " asks: " + question, null, null);
+            smsManager.sendTextMessage(expertPhoneNumber, null, name + ", " + "email: " + email +", "+"Phone Number: "+ phoneNo + " from " + location + " asks: " + question, null, null);
             smsManager.sendTextMessage(phoneNo, null, "Your question has been sent to an expert in " + farmingType + " on Mobile No: " + expertPhoneNumber + ". The expert will respond to your enquiry as soon as possible", null, null);
             Toast.makeText(getApplicationContext(), "Query Sent", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
